@@ -1,3 +1,36 @@
+:root {
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --secondary-color: #f8f9fa;
+}
+
+
+body {
+  background-color: var(--secondary-color);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  min-height: 80vh;
+}
+  
+.user-profile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+button {
+  background: linear-gradient(to right, var(--primary-color), #8a6cff);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 .user-profile {
   display: flex;
   gap: 30px;
@@ -58,8 +91,13 @@ button:active {
 
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-spinner {
@@ -80,4 +118,38 @@ button:active {
   max-width: 800px;
   margin: 0 auto 30px;
   border: 1px solid #ffccc7;
+}
+
+@media (max-width: 768px) {
+  .user-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .user-info {
+    text-align: center;
+  }
+
+  .user-profile img {
+    width: 120px;
+    height: 120px;
+  }
+
+  #root {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-info p {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
