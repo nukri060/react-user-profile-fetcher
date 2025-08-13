@@ -45,8 +45,8 @@ export function UserProfileFetcher() {
         fetchData();
     }, [refreshTrigger]);
 
-    if (isLoading) return <p>Loading...</p>;
-    if (isError) return <p>Failed to fetch user data. Please try again.</p>;
+    if (isLoading) return <div className="loading-spinner"></div>;
+    if (isError) return <p className="error-message">Failed to fetch user data. Please try again.</p>;
     if (!userData) return null;
 
     return (
